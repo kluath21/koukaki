@@ -1,0 +1,855 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+ :root {
+	--rotate:20s;
+  }
+  
+  body {
+	height: 2000px;
+  }
+  
+  #div-1 {
+	height: 500px;
+  }
+  
+  .flower:before {
+	left: 250px;
+	height: 100px;
+	width: 100px;
+	content: "";
+	position: absolute;
+	animation: rotate linear infinite;
+	animation-duration: var(--rotate);
+  }
+  
+  @keyframes rotate {
+	100% {
+	  transform: rotate(1turn);
+	}
+  }
+  
+  /* animation des sections */
+  
+  .banner {
+	animation: fadeInBanner 1s ease-in forwards;
+	opacity: 0;
+  }
+  
+  @keyframes fadeInBanner {
+	from {
+	  transform: translateY(50px);
+	  opacity: 0;
+	}
+  
+	to {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  .story {
+	animation: fadeIn4 1s ease-in forwards;
+	opacity: 0;
+	transform: translateY(-100px);
+  }
+  
+  @keyframes fadeIn4 {
+	from {
+	  transform: translateY(-100px) translateY(0);
+	  opacity: 0;
+	}
+  
+	to {
+	  transform: translateX(0) translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  #characters {
+	animation: fadeInBanner 1s ease-in forwards;
+	opacity: 0;
+	transform: translateX(-100px);
+  }
+  
+  @keyframes fadeIn4 {
+	from {
+	  transform: translateX(-100px) translateY(0);
+	  opacity: 0;
+	}
+  
+	to {
+	  transform: translateX(0) translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  #studio {
+	animation: fadeIn2 1s ease-in forwards;
+	opacity: 0;
+  }
+  
+  @keyframes fadeIn2 {
+	from {
+	  transform: translateY(75px);
+	  opacity: 0;
+	}
+  
+	to {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  .oscar {
+	animation: fadeIn4 1s ease-in forwards;
+	opacity: 0;
+	transform: translateX(-100px);
+  }
+  
+  @keyframes fadeIn4 {
+	from {
+	  transform: translateX(-100px) translateY(0);
+	  opacity: 0;
+	}
+  
+	to {
+	  transform: translateX(0) translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  .background_video {
+	z-index: 1;
+	width: 100%;
+	position: relative;
+  }
+  
+  /* rotation des fleurs*/
+  @keyframes rotating {
+	from {
+	  transform: rotate(0deg);
+	}
+  
+	to {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  .story__article::after, .story h2::after {
+	animation: rotating normal linear infinite;
+	animation-duration: var(--rotate);
+  }
+  
+  #studio h2 {
+	&::before, &::after {
+	  animation: rotating normal linear infinite;
+	  animation-duration: var(--rotate);
+	}
+  }
+  
+  .site-footer {
+	&::after, ul::after {
+	  animation: rotating normal linear infinite;
+	  animation-duration: var(--rotate);
+	}
+  
+	&::before {
+	  animation: rotating normal linear infinite;
+	  animation-duration: var(--rotate);
+	  position: absolute;
+	  left: 4em;
+	  top: 5em;
+	}
+  
+	position: relative;
+	display: flex;
+	padding-top: 30em;
+	padding-bottom: 1em;
+	overflow: hidden;
+	flex-wrap: wrap;
+  
+	&::after {
+	  position: absolute;
+	  right: -4em;
+	  bottom: 40.8em;
+	}
+  }
+  
+  /* section nomination */
+  
+  .oscar {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	bottom: 250px;
+	left: 140px;
+  }
+  
+  .nomination_title {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	width: 90%;
+	height: auto;
+  
+	p {
+	  position: absolute;
+	  top: 50%;
+	  left: 7%;
+	  transform: translateY(-50%);
+	  text-align: left;
+	  color: white;
+	  font-size: 41px;
+	  width: 655px;
+	  height: 250px;
+	  font-family: Quicksand;
+	  font-weight: 700;
+	  line-height: 52px;
+	  text-shadow: black 0px 0px 2px;
+	}
+  }
+  
+  .place_bg {
+	width: 100%;
+  }
+  
+  .oscar-2021 {
+	object-fit: contain;
+  }
+  
+  /*fin section nomination */
+  
+  /* animation des titres h2 et h3 */
+  
+  h3 {
+	background-position: left;
+	text-align: left;
+	padding: 1em 1em;
+  
+	span {
+	  opacity: 0;
+	}
+  }
+  
+  h2 span {
+	opacity: 0;
+  }
+  
+  .animated {
+	opacity: 1;
+  }
+  
+  .word-animation {
+	position: relative;
+	opacity: 0;
+	transition: all 0.3s;
+  }
+  
+  .animate-title .word-animation {
+	opacity: 0;
+	animation: animate-title 0.5s forwards;
+  }
+  
+  @keyframes animate-title {
+	0% {
+	  bottom: -100px;
+	  opacity: 0;
+	}
+  
+	100% {
+	  bottom: 0;
+	  opacity: 1;
+	}
+  }
+  
+  /*fin animation des titres */
+  
+  @keyframes animeBanner {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+  }
+  
+  .background-video {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+  }
+  
+  .logo {
+	position: absolute;
+	bottom: -30px;
+  
+	/* Adjust the value as needed */
+	left: 50%;
+	transform: translateX(-50%);
+	max-width: 100%;
+	max-height: 100%;
+  
+	/* Chained animations for floating and fading in */
+	animation: floatLogo 3s ease-in-out infinite alternate, fadeIn 2s ease-out forwards;
+	z-index: 2;
+  }
+  
+  /* Floating effect of the logo */
+  @keyframes floatLogo {
+	0% {
+	  transform: translate(-50%, -50%);
+	}
+  
+	50% {
+	  transform: translate(-50%, -55%);
+	}
+  
+	100% {
+	  transform: translate(-50%, -50%);
+	}
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+	from {
+	  top: 660px;
+	  opacity: 0;
+	}
+  
+	to {
+	  bottom: 300px;
+	  opacity: 1;
+	}
+  }
+  
+  /* slider */
+  
+  #characters {
+	width: 100%;
+  }
+  
+  .swiper {
+	width: 100%;
+	padding-top: 60px;
+	padding-bottom: 60px;
+  }
+  
+  .swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+  
+	img {
+	  display: block;
+	  width: 100%;
+	}
+  }
+  
+  /* CLOUDS POSITIONING AND ANIMATION */
+  
+  #big_cloud, #little_cloud {
+	position: absolute;
+	transition: transform 1s linear;
+  
+	/* Animation fluide */
+  }
+  
+  .story #place {
+	background-image: url("images/Studio_Koukaki-image_place.png");
+	background-attachment: fixed;
+	position: relative;
+	width: 100%;
+  
+	#clouds {
+	  position: absolute;
+	  filter: blur(10px);
+	  width: 90%;
+	  top: 150px;
+	  max-width: 100%;
+	  display: block;
+	  margin-left: 0;
+	}
+  }
+  
+  #big_cloud {
+	position: absolute;
+	top: -50px;
+	right: 130px;
+  }
+  
+  #little_cloud {
+	position: absolute;
+	top: 90px;
+	right: 450px;
+  }
+  
+  /*   Navigation   */
+  
+  .nav_burger {
+	height: 100%;
+	width: 1440px;
+	position: fixed;
+	z-index: 1;
+	top: -100%;
+	background-color: #ffd5a2;
+	padding-top: 60px;
+	transition: all 1s ease;
+	animation: upMenu 1s;
+	overflow: hidden;
+  
+	a {
+	  text-decoration: none;
+	  font-size: 40px;
+	  color: black;
+	  display: block;
+	  transition: 0.3s;
+	  text-align: center;
+	}
+  
+	ul {
+	  a:hover {
+		text-shadow: 0px 0px 15px #ff5c00;
+	  }
+  
+	  list-style-type: none;
+	  flex-direction: column;
+	  background-color: #fff5e9;
+	}
+  
+	&.active {
+	  top: 0;
+	  width: 1440px;
+	  text-align: center;
+	  padding-top: 50px;
+	  animation: down 1s;
+	  transition: transform 300ms cubic-bezier(-5, 0, 0, 1);
+	}
+  }
+  
+  @keyframes upMenu {
+	from {
+	  opacity: 1;
+	  transform: translate3d(0, 20%, 0);
+	}
+  
+	to {
+	  opacity: 0;
+	  transform: translate3d(0, 0, 0);
+	}
+  }
+  
+  #closeBtn {
+	position: relative;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	gap: 8px;
+  }
+  
+  a#closeBtn {
+	left: 1270px;
+	top: -12px;
+  }
+  
+  #closeBtn span {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: black;
+  
+	&:first-child {
+	  transform: rotate(45deg);
+	}
+  
+	&:last-child {
+	  transform: rotate(-45deg);
+	}
+  }
+  
+  .burger-icon span {
+	display: block;
+	width: 35px;
+	height: 1px;
+	background-color: black;
+	margin: 6px 0;
+  }
+  
+  #openBtn {
+	display: block;
+	position: absolute;
+	top: 24px;
+	left: 1268px;
+	width: 100%;
+  }
+  
+  a#openBtn {
+	width: 35px;
+  }
+  
+  .hidden {
+	display: none;
+  }
+  
+  .site-title {
+	z-index: 2;
+  }
+  
+  .nav_burger ul li {
+	top: 5px;
+  }
+  
+  .logo_burger {
+	position: relative;
+	top: 5px;
+	height: 120px;
+	width: auto;
+  }
+  
+  .orchid_burger {
+	position: absolute;
+	left: -55px;
+	top: 120px;
+	animation: rotating 15s linear infinite;
+  }
+  
+  .marguerite_burger {
+	position: absolute;
+	width: 216px;
+	height: 216px;
+	top: 169px;
+	left: 1039px;
+	animation: rotating 15s linear infinite;
+  }
+  
+  .random_flower_burger {
+	position: absolute;
+	width: 75.75px;
+	height: 74.53px;
+	top: 475px;
+	left: 1396px;
+	animation: rotating 15s linear infinite;
+  }
+  
+  .flower_burger {
+	position: absolute;
+	width: 70.76px;
+	height: 70.76px;
+	top: 563px;
+	left: 213px;
+	border: 0.9;
+	animation: rotating 15s linear infinite;
+  }
+  
+  .chat_gris_burger {
+	position: absolute;
+	width: 150px;
+	height: auto;
+	top: 550px;
+	left: 1076px;
+	padding: 0 0 0 0;
+	border-radius: 0 0 4 4;
+	background: none;
+	animation: floatCat 5s ease-in-out 0s infinite;
+  }
+  
+  .chat_roux_burger {
+	position: absolute;
+	width: 115px;
+	height: auto;
+	top: 830px;
+	left: 80px;
+	border-radius: 0 0 8 8;
+	rotate: 0.5deg;
+	animation: floatCat 5s ease-in-out 0s infinite;
+  }
+  
+  .chat_bleu_burger {
+	position: absolute;
+	width: 130px;
+	height: auto;
+	top: 275px;
+	left: 265px;
+	rotate: 3deg;
+	animation: floatCat 5s ease-in-out 0s infinite;
+  }
+  
+  .hibiscus {
+	position: absolute;
+	width: 626px;
+	height: 626px;
+	top: 740px;
+	left: 1122px;
+	animation: rotating 15s linear infinite;
+  }
+  
+  @keyframes floatCat {
+	0% {
+	  transform: translateY(0);
+	}
+  
+	50% {
+	  transform: translateY(-15px);
+	}
+  
+	100% {
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes down {
+	from {
+	  opacity: 0;
+	  transform: translate3d(0, -20%, 0);
+	}
+  
+	to {
+	  opacity: 1;
+	  transform: translate3d(0, 0, 0);
+	}
+  }
+  
+  @media (max-width: 700px) {
+	/* Add your CSS code here for the 700px max width */
+  
+	body {
+	  height: auto;
+	}
+  
+	#div-1 {
+	  height: 300px;
+	}
+  
+	.flower:before {
+	  left: 150px;
+	}
+  
+	h2 {
+	  font-size: 2rem;
+	}
+  
+	h3 {
+	  font-size: 1.5rem;
+	}
+  
+	.story #place h3 {
+	  margin-left: 50px;
+	}
+  
+	p {
+	  font-size: 13px;
+	}
+  
+	#primary .visible {
+	  opacity: 1;
+	  margin-left: 50px;
+	}
+  
+	.oscar {
+	  left: 0;
+	}
+  
+	.nomination_title {
+	  display: flex;
+	  position: relative;
+	  width: 95%;
+	  height: auto;
+	  flex-direction: column;
+  
+	  p {
+		font-size: 20px;
+		width: 315px;
+		height: 175px;
+		line-height: 30px;
+		top: 28%;
+		left: 6%;
+	  }
+	}
+  
+	.oscar-2021 {
+	  object-fit: contain;
+	  width: 90%;
+	}
+  
+	img {
+	  height: auto;
+	  max-width: 95%;
+	}
+  
+	.story__article {
+	  padding-bottom: 1em;
+	}
+  
+	.story #characters div {
+	  flex: 1;
+	  margin-bottom: -70px;
+	}
+  
+	.swiper {
+	  width: 100%;
+	}
+  
+	.background_video {
+	  display: none;
+	  z-index: 1;
+	  width: 10000px;
+	  position: relative;
+	}
+  
+	.banner {
+	  min-height: 200px;
+	  background-size: cover;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+  
+	.fallback-image {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  max-width: 100%;
+  
+	  /*/ Limite la largeur à 100% de son conteneur */
+	  z-index: -2;
+	}
+  
+	.logo.floating {
+	  top: 135px !important;
+  
+	  /* Définissez une position fixe pour les appareils mobiles */
+	}
+  
+	#big_cloud, #little_cloud {
+	  display: none;
+	}
+  
+	.story #place {
+	  min-height: 520px;
+	}
+  
+	.site-footer {
+	  padding-top: 20em;
+	}
+  
+	.main-navigation {
+	  height: 30px;
+  
+	  &.toggled {
+		height: 100%;
+  
+		ul {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		}
+	  }
+  
+	  .nav_burger {
+		display: block;
+		width: 100%;
+		position: relative;
+		padding-top: 0;
+		top: 0;
+		background-color: #eaeaea;
+  
+		/* Example background color */
+		height: 0px;
+  
+		/* Example height */
+	  }
+  
+	  &.toggled .nav_burger {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		padding-top: 0;
+		position: relative;
+  
+		/* Changed from inherit to relative for consistent positioning */
+		height: 100%;
+  
+		/* Example height */
+		background-color: #cacaca;
+  
+		/* Example background color */
+		top: -300px;
+	  }
+	}
+  
+	.nav_burger a {
+	  font-size: 25px;
+  
+	  /* Réduit la taille de la police pour les petits écrans */
+	}
+  
+	.main-navigation ul::after {
+	  height: 100%;
+	}
+  
+	.nav_burger .close {
+	  right: 20px;
+  
+	  /* Ajustez la position du bouton de fermeture */
+	}
+  
+	#openBtn {
+	  right: 20px;
+  
+	  /* Ajustez la position du bouton d'ouverture */
+	}
+  
+	.close span {
+	  display: block;
+	  position: absolute;
+	  top: -14px;
+	  left: 1270px;
+	  width: 100%;
+	  height: 1px;
+	  background-color: black;
+	}
+  
+	.burger-icon span {
+	  display: none;
+	}
+  
+	.main-navigation .line {
+	  height: 1px;
+	  margin-block: 3px;
+	}
+  
+	.nav_burger ul {
+	  padding-top: 20px;
+	  margin-top: -35px;
+	  margin-left: -30px;
+  
+	  li {
+		top: 0;
+	  }
+	}
+  
+	.logo_burger {
+	  top: 0;
+	  height: 80px;
+	}
+  
+	.orchid_burger, .marguerite_burger, .random_flower_burger, .flower_burger, .chat_gris_burger, .chat_roux_burger, .chat_bleu_burger, .hibiscus {
+	  display: none;
+	}
+  }
+  
